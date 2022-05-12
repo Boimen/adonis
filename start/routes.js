@@ -14,6 +14,10 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
+const Router = require ('express')
+const {serverpage,mostrarproductos,buscarprodNombre,borrarproducto,modificarproducto,guardarproducto} = require ('../Controllers/Productos')
+const RouterProductos = new Router ()
+const Route = use ('Route')
+ 
+Route.get('/', mostrarproductos)
 
-Route.on('/').render('welcome')
